@@ -1,0 +1,264 @@
+:root {
+    color-scheme: light;
+    --primary: #2874f0;
+    --primary-dark: #1a5fd1;
+    --accent: #f7b500;
+    --bg: #f5f7fb;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --card: #ffffff;
+    --shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+}
+
+.top-bar {
+    background: var(--primary);
+    color: #fff;
+    padding: 20px 8vw;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.search {
+    display: flex;
+    flex: 1;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.search input {
+    flex: 1;
+    border: none;
+    padding: 14px 16px;
+    font-size: 0.95rem;
+}
+
+.search button {
+    border: none;
+    background: var(--accent);
+    color: #1f2937;
+    padding: 0 22px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.actions {
+    display: flex;
+    gap: 12px;
+}
+
+.ghost {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.hero {
+    padding: 50px 8vw 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 3vw, 3rem);
+    margin: 16px 0;
+}
+
+.hero p {
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.hero-actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.primary,
+.secondary,
+.link {
+    border: none;
+    padding: 12px 20px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.primary {
+    background: var(--primary);
+    color: #fff;
+}
+
+.secondary {
+    background: rgba(40, 116, 240, 0.12);
+    color: var(--primary-dark);
+}
+
+.link {
+    background: transparent;
+    color: var(--primary-dark);
+}
+
+.pill {
+    background: rgba(40, 116, 240, 0.12);
+    color: var(--primary-dark);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.hero-card {
+    background: var(--card);
+    padding: 28px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
+.hero-card ul {
+    margin-top: 16px;
+    list-style: none;
+    display: grid;
+    gap: 8px;
+    color: var(--muted);
+}
+
+.price {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+.categories,
+.deals,
+.services {
+    padding: 30px 8vw;
+}
+
+.category-grid,
+.deal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.category-card,
+.deal-card {
+    background: var(--card);
+    padding: 18px;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    display: grid;
+    gap: 8px;
+}
+
+.category-card .icon {
+    font-size: 1.5rem;
+}
+
+.deals-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.badge {
+    background: var(--accent);
+    color: #1f2937;
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.75rem;
+}
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.services-card,
+.newsletter {
+    background: var(--card);
+    padding: 24px;
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+}
+
+.services-card ul {
+    margin-top: 12px;
+    list-style: none;
+    display: grid;
+    gap: 8px;
+    color: var(--muted);
+}
+
+.newsletter-form {
+    margin-top: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.newsletter input {
+    flex: 1;
+    min-width: 180px;
+    padding: 10px 12px;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+}
+
+footer {
+    padding: 30px 8vw 40px;
+    color: var(--muted);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.footer-links {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 720px) {
+    .top-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .actions {
+        justify-content: flex-start;
+    }
+}

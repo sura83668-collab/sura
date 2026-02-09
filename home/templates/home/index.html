@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sura | Shop Smarter</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'home/styles.css' %}">
+</head>
+<body>
+    <header class="top-bar">
+        <div class="logo">Sura</div>
+        <div class="search">
+            <input type="text" placeholder="Search for products, brands and more" />
+            <button>Search</button>
+        </div>
+        <div class="actions">
+            <button class="ghost">Sign In</button>
+            <button class="ghost">Cart (2)</button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div>
+            <span class="pill">New Season Deals</span>
+            <h1>Everything you love about shopping, now on Sura.</h1>
+            <p>Discover curated picks, top brands, and unbeatable offers inspired by your favorites.</p>
+            <div class="hero-actions">
+                <button class="primary">Explore Deals</button>
+                <button class="secondary">Download App</button>
+            </div>
+        </div>
+        <div class="hero-card">
+            <h3>Today’s Highlight</h3>
+            <p class="price">Extra 20% off on electronics</p>
+            <ul>
+                <li>Instant bank offers</li>
+                <li>No-cost EMI options</li>
+                <li>Lightning delivery</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="categories">
+        <h2>Shop by Category</h2>
+        <div class="category-grid">
+            {% for category in categories %}
+            <div class="category-card">
+                <div class="icon">🛍️</div>
+                <span>{{ category }}</span>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="deals">
+        <div class="deals-header">
+            <h2>Top Deals for You</h2>
+            <button class="link">View all</button>
+        </div>
+        <div class="deal-grid">
+            {% for deal in deals %}
+            <div class="deal-card">
+                <span class="badge">{{ deal.badge }}</span>
+                <h3>{{ deal.title }}</h3>
+                <p>{{ deal.price }}</p>
+                <button class="secondary">Shop now</button>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="services-card">
+            <h2>Why shop on Sura?</h2>
+            <ul>
+                {% for service in services %}
+                <li>{{ service }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="newsletter">
+            <h3>Stay in the loop</h3>
+            <p>Get the latest deals and drops in your inbox.</p>
+            <div class="newsletter-form">
+                <input type="email" placeholder="Enter your email" />
+                <button class="primary">Notify me</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div>
+            <strong>Sura</strong>
+            <p>Inspired by Flipkart shopping experiences.</p>
+        </div>
+        <div class="footer-links">
+            <span>About</span>
+            <span>Help</span>
+            <span>Policy</span>
+            <span>Contact</span>
+        </div>
+    </footer>
+</body>
+</html>
